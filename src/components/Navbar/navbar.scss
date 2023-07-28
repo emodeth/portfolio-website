@@ -31,4 +31,31 @@
       color: $blue;
     }
   }
+
+  &__menu-icon {
+    display: none;
+
+    font-size: 2.3rem;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 2.5rem 5rem;
+
+    &__links {
+      display: none;
+    }
+
+    &__menu-icon {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .navbar {
+    padding: 2.5rem;
+  }
 }

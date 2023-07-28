@@ -1,0 +1,46 @@
+@import "../../variables";
+
+.navbar-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: 0.4s;
+
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  z-index: 20;
+  width: 100vw;
+  height: 100vh;
+
+  &--closed {
+    left: -101%;
+  }
+
+  &--active {
+    left: 0%;
+  }
+
+  &__links {
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+  }
+
+  &__link {
+    font-size: 2.3rem;
+    color: $off-black;
+
+    font-weight: 500;
+  }
+
+  &__close-icon {
+    position: absolute;
+    right: 4rem;
+    top: 2rem;
+    font-size: 3.3rem;
+    cursor: pointer;
+  }
+}
