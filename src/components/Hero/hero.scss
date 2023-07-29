@@ -1,6 +1,9 @@
 @import "../../variables";
 
 .hero {
+  padding-bottom: 28rem;
+  background-color: $off-white;
+
   &__content {
     display: flex;
     flex-direction: column;

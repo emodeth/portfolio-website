@@ -8,6 +8,7 @@
   box-sizing: border-box;
   list-style-type: none;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -16,7 +17,7 @@ html {
 
 body {
   position: relative;
-  background-color: $off-white;
+  background-color: #fff;
 }
 
 a {
