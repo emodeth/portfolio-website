@@ -4,6 +4,9 @@ import "./navbar.scss";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  function handleIsOpen() {
+    setIsOpen((isOpen) => !isOpen);
+  }
 
   return (
     <nav className="navbar">
@@ -24,9 +27,9 @@ function Navbar() {
       </ul>
       <i
         className="fa-solid fa-bars-staggered navbar__menu-icon"
-        onClick={() => setIsOpen(true)}
+        onClick={handleIsOpen}
       ></i>
-      <NavbarMobile isOpen={isOpen} setIsOpen={setIsOpen} />
+      <NavbarMobile isOpen={isOpen} onIsOpen={handleIsOpen} />
     </nav>
   );
 }

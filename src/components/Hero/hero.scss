@@ -1,0 +1,121 @@
+@import "../../variables";
+
+.hero {
+  background-color: $off-white;
+  height: 100vh;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 65rem;
+    padding-top: 25rem;
+  }
+
+  &__main {
+    display: flex;
+    gap: 10rem;
+  }
+
+  &__text {
+    flex: 0 0 50%;
+  }
+
+  &__header {
+    color: $off-black;
+    font-size: 5.5rem;
+    margin: 2rem 0;
+  }
+
+  &__description {
+    color: #555;
+    font-family: Mulish, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  &__contact {
+    display: flex;
+    gap: 1.3rem;
+    margin: 2.5rem 0;
+
+    i {
+      color: #2d2e32;
+      font-size: 3rem;
+      transition: 0.2s;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &__img {
+    flex: 1;
+
+    -webkit-animation: morph 8s ease-in-out infinite;
+    animation: morph 8s ease-in-out infinite;
+    background-image: url(../../images/340310817_708602997725784_3355047837167276837_n.jpg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid #2d2e32;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    height: 35rem;
+    position: relative;
+    transition: all 1s ease-in-out;
+    width: 35rem;
+  }
+
+  &__tech-stack {
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+
+    p {
+      border-right: 2px solid rgba(45, 46, 50, 0.5);
+      color: #2d2e32;
+      font-family: Mulish, sans-serif;
+      font-weight: 600;
+      margin-right: 7rem;
+      padding-right: 2rem;
+      font-size: 1.7rem;
+    }
+
+    ul {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+
+      li {
+        align-items: center;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+        cursor: pointer;
+        display: flex;
+        height: 6.5rem;
+        justify-content: center;
+        width: 6.5rem;
+
+        img {
+          height: 3.4rem;
+          width: 3.4rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}

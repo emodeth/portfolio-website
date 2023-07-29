@@ -1,6 +1,6 @@
 import "./navbar-mobile.scss";
 
-function NavbarMobile({ isOpen, setIsOpen }) {
+function NavbarMobile({ isOpen, onIsOpen }) {
   return (
     <div
       className={
@@ -11,19 +11,19 @@ function NavbarMobile({ isOpen, setIsOpen }) {
     >
       <i
         className="fa-solid fa-xmark navbar-mobile__close-icon"
-        onClick={() => setIsOpen(false)}
+        onClick={onIsOpen}
       ></i>
       <ul className="navbar-mobile__links">
-        <li className="navbar-mobile__link">
+        <li className="navbar-mobile__link" onClick={onIsOpen}>
           <a href="#home">Home</a>
         </li>
-        <li className="navbar-mobile__link">
+        <li className="navbar-mobile__link" onClick={onIsOpen}>
           <a href="#about">About</a>
         </li>
-        <li className="navbar-mobile__link">
+        <li className="navbar-mobile__link" onClick={onIsOpen}>
           <a href="#projects">Projects</a>
         </li>
-        <li className="navbar-mobile__link">
+        <li className="navbar-mobile__link" onClick={onIsOpen}>
           <a href="#contact">Contact</a>
         </li>
       </ul>
