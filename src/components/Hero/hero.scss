@@ -1,9 +1,6 @@
 @import "../../variables";
 
 .hero {
-  background-color: $off-white;
-  height: 100vh;
-
   &__content {
     display: flex;
     flex-direction: column;
@@ -52,7 +49,8 @@
   }
 
   &__img {
-    flex: 1;
+    height: 35rem;
+    width: 35rem;
 
     -webkit-animation: morph 8s ease-in-out infinite;
     animation: morph 8s ease-in-out infinite;
@@ -62,10 +60,9 @@
     background-size: cover;
     border: 3px solid #2d2e32;
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-    height: 35rem;
+
     position: relative;
     transition: all 1s ease-in-out;
-    width: 35rem;
   }
 
   &__tech-stack {
@@ -87,6 +84,8 @@
       display: flex;
       gap: 2.5rem;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
 
       li {
         align-items: center;
@@ -117,5 +116,62 @@
   }
   100% {
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hero {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__content {
+      height: auto;
+      padding-top: 15rem;
+      width: 70%;
+    }
+
+    &__main {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    &__text {
+      text-align: center;
+    }
+
+    &__description {
+      margin-bottom: 5rem;
+    }
+
+    &__contact {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__tech-stack {
+      flex-direction: column;
+      position: static;
+
+      p {
+        border-bottom: 2px solid rgba(45, 46, 50, 0.5);
+        border-right: none;
+        margin-bottom: 3rem;
+        margin-right: 0;
+        padding-bottom: 1rem;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero__img {
+    width: 28rem;
+    height: 28rem;
   }
 }

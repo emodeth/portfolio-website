@@ -2,6 +2,7 @@
 
 .navbar {
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
   height: auto;
@@ -11,6 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: rgba($color: $off-white, $alpha: 9);
 
   color: $off-black;
 
@@ -43,7 +45,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .navbar {
     padding: 2.5rem 5rem;
 
