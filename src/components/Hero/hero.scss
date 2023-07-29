@@ -124,6 +124,7 @@
 
 @media screen and (max-width: 900px) {
   .hero {
+    padding-bottom: 0;
     &__container {
       display: flex;
       flex-direction: column;
@@ -133,6 +134,7 @@
     &__content {
       height: auto;
       padding-top: 15rem;
+      padding-bottom: 5rem;
       width: 70%;
     }
 
