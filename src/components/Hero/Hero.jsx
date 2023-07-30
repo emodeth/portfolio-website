@@ -23,7 +23,7 @@ function Hero() {
                   aria-label="linkedin"
                   rel="noreferrer"
                   target="_blank"
-                  href="https://www.linkedin.com/in/stefan-topalovic-dev/"
+                  href="https://www.linkedin.com/in/emirhan-keskin-99854b215/"
                 >
                   <i class="fa-brands fa-linkedin"></i>
                 </a>
@@ -31,7 +31,7 @@ function Hero() {
                   aria-label="github"
                   rel="noreferrer"
                   target="_blank"
-                  href="https://github.com/stefvndev"
+                  href="https://github.com/emodeth"
                 >
                   <i class="fa-brands fa-github"></i>
                 </a>
