@@ -3,6 +3,8 @@
 .projects {
   background-color: $off-white;
   padding: 16rem 0;
+  display: flex;
+  flex-direction: column;
 
   &__header {
     color: $blue;
@@ -17,4 +19,7 @@
     font-size: 2.5rem;
     margin-bottom: 6rem;
   }
+}
+
+@media screen and (max-width: 1023px) {
 }

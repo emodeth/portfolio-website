@@ -19,8 +19,12 @@
     flex-direction: row-reverse;
   }
 
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
   &__img {
-    width: 53rem;
+    max-width: 53rem;
     height: 100%;
     overflow: hidden;
     background-color: hsla(0, 0%, 46%, 0.2);
@@ -108,6 +112,30 @@
 
     .link-icon {
       font-size: 2rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .project {
+    flex-direction: column !important;
+    height: auto;
+    gap: 3rem;
+
+    &__img {
+      height: 35rem;
+    }
+  }
+}
+
+@media screen and (max-width: 76px) {
+  .project {
+    flex-direction: column !important;
+    height: auto;
+    gap: 3rem;
+
+    &__img {
+      height: 35rem;
     }
   }
 }
