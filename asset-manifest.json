@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/porftolio-site/static/css/main.d474cebd.css",
+    "main.js": "/porftolio-site/static/js/main.500e52bc.js",
+    "static/media/coindom.png": "/porftolio-site/static/media/coindom.c5fef9ca2f47e52897f8.png",
+    "static/media/about-img.webp": "/porftolio-site/static/media/about-img.62b47e7f183d4b4e9feb.62b47e7f183d4b4e9feb.webp",
+    "static/media/340310817_708602997725784__n.jpg": "/porftolio-site/static/media/340310817_708602997725784_3355047837167276837_n.01dde16bd3903c8001cf.jpg",
+    "static/media/working-emoji.png": "/porftolio-site/static/media/working-emoji.c5325f52b5be329995a5.7b10b8387a033d888461.png",
+    "static/media/text2.svg": "/porftolio-site/static/media/text2.3d5aa6ba2d0632bb4e0572631c3f9dc2.3d5aa6ba2d0632bb4e0572631c3f9dc2.svg",
+    "static/media/react.svg": "/porftolio-site/static/media/react.afac9c43724070bf6674f2692b7356a9.svg",
+    "static/media/sass.svg": "/porftolio-site/static/media/sass.67cd0525916c4cdea4eb3abd8ae11137.svg",
+    "index.html": "/porftolio-site/index.html",
+    "static/media/js.svg": "/porftolio-site/static/media/js.de4c2594613e34b15666206bbede7327.svg",
+    "static/media/css.svg": "/porftolio-site/static/media/css.9cecabbf6ce67609c48bc4f280a11002.svg",
+    "static/media/tailwind.svg": "/porftolio-site/static/media/tailwind.79614a5f61617ba49a0891494521226b.svg",
+    "static/media/html.svg": "/porftolio-site/static/media/html.6e7b1b463015c056aeb9a624c8dc2876.svg",
+    "main.d474cebd.css.map": "/porftolio-site/static/css/main.d474cebd.css.map",
+    "main.500e52bc.js.map": "/porftolio-site/static/js/main.500e52bc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d474cebd.css",
+    "static/js/main.500e52bc.js"
+  ]
+}
