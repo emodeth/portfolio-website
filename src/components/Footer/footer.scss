@@ -1,0 +1,40 @@
+@import "../../variables";
+
+.footer {
+  background-color: $off-black;
+  color: #fff;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 0;
+  }
+
+  &__copyright {
+    font-size: 1.7rem;
+    font-weight: bolder;
+  }
+
+  &__socials {
+    color: #fff;
+    font-size: 2.3rem;
+    display: flex;
+    gap: 2rem;
+
+    a i {
+      transition: 0.2s;
+    }
+
+    a i:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@media screen and (max-width: 569px) {
+  .footer__content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
