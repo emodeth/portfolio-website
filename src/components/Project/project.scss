@@ -44,7 +44,7 @@
   }
 
   &__content {
-    width: 30rem;
+    max-width: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,7 +117,7 @@
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
   .project {
     flex-direction: column !important;
     height: auto;
@@ -129,7 +129,7 @@
   }
 }
 
-@media screen and (max-width: 76px) {
+@media screen and (max-width: 768px) {
   .project {
     flex-direction: column !important;
     height: auto;

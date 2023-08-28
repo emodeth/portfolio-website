@@ -15,20 +15,10 @@ function Projects() {
           description="Coindom is a crypto app that allows users to search for information about various cryptocurrencies in real-time."
           tech1="React"
           tech2="SCSS"
-          ghLink="#"
-          ldLink="#"
+          ghLink="https://github.com/emodeth/coindom-crypto-v2"
+          ldLink="https://coindom-crypto.vercel.app/"
           imgUrl={coindom}
           layout="row"
-        />
-        <Project
-          title="coindom"
-          description="Coindom is a crypto app that allows users to search for information about various cryptocurrencies in real-time."
-          tech1="React"
-          tech2="SCSS"
-          ghLink="#"
-          ldLink="#"
-          imgUrl={coindom}
-          layout="row-reverse"
         />
       </div>
     </div>

@@ -25,7 +25,7 @@ function Hero() {
                   target="_blank"
                   href="https://www.linkedin.com/in/emirhan-keskin-99854b215/"
                 >
-                  <i class="fa-brands fa-linkedin"></i>
+                  <i className="fa-brands fa-linkedin"></i>
                 </a>
                 <a
                   aria-label="github"
@@ -33,7 +33,7 @@ function Hero() {
                   target="_blank"
                   href="https://github.com/emodeth"
                 >
-                  <i class="fa-brands fa-github"></i>
+                  <i className="fa-brands fa-github"></i>
                 </a>
               </div>
             </div>

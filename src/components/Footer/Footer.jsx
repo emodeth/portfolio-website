@@ -8,14 +8,14 @@ function Footer() {
           <p className="footer__copyright">
             Copyright © 2023. All rights are reserved
           </p>
-          <div class="footer__socials">
+          <div className="footer__socials">
             <a
               aria-label="linkedin"
               target="_blank"
               rel="noreferrer"
               href="https://www.linkedin.com/in/emirhan-keskin-99854b215/"
             >
-              <i class="fa-brands fa-linkedin"></i>
+              <i className="fa-brands fa-linkedin"></i>
             </a>
             <a
               aria-label="github"
@@ -23,7 +23,7 @@ function Footer() {
               rel="noreferrer"
               href="https://github.com/emodeth"
             >
-              <i class="fa-brands fa-github"></i>
+              <i className="fa-brands fa-github"></i>
             </a>
           </div>
         </div>

@@ -9,7 +9,7 @@ function Contact() {
         <div className="contact__contacts">
           <div className="contact__location">
             <span className="contact__location-icon">
-              <i class="fa-solid fa-map-location-dot"></i>
+              <i className="fa-solid fa-map-location-dot"></i>
             </span>
             <div className="contact__location-content">
               <h5 className="contact__location-header">Location</h5>
@@ -18,13 +18,13 @@ function Contact() {
           </div>
           <div className="contact__mail">
             <span className="contact__mail-icon">
-              <i class="fa-solid fa-envelope-open-text"></i>
+              <i className="fa-solid fa-envelope-open-text"></i>
             </span>
             <div className="contact__mail-content">
               <h5 className="contact__mail-header">Mail</h5>
               <p className="contact__mail-text">
-                <a href="mailto:emirhankeskin9119@gmail.com">
-                  emirhankeskin9119@gmail.com
+                <a href="mailto:emirhankeskindev@gmail.com">
+                  emirhankeskindev@gmail.com
                 </a>
               </p>
             </div>
