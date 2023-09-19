@@ -28,5 +28,5 @@
 <br>
 
 <div align='center'>
-<img src="https://i.hizliresim.com/rdkrk5t.png"/>
+<img src="https://i.hizliresim.com/ayvbj3t.png"/>
 </div>
