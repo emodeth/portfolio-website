@@ -1,10 +1,8 @@
 import "./hero.scss";
-import html from "../../images/html.svg";
-import css from "../../images/css.svg";
-import js from "../../images/js.svg";
-import react from "../../images/react.svg";
-import tailwind from "../../images/tailwind.svg";
-import sass from "../../images/sass.svg";
+import htmlCss from "../../images/html-css.svg";
+import jsTs from "../../images/jsts.svg";
+import reactNext from "../../images/react-nextjs.svg";
+import tailwindScss from "../../images/tailwind-scss.svg";
 
 function Hero() {
   return (
@@ -43,22 +41,16 @@ function Hero() {
             <p>Tech Stack</p>
             <ul>
               <li>
-                <img src={html} alt="html" />
+                <img src={htmlCss} alt="html css" />
               </li>
               <li>
-                <img src={css} alt="html" />
+                <img src={jsTs} alt="js ts" />
               </li>
               <li>
-                <img src={js} alt="html" />
+                <img src={reactNext} alt="react nextjs" />
               </li>
               <li>
-                <img src={react} alt="html" />
-              </li>
-              <li>
-                <img src={tailwind} alt="html" />
-              </li>
-              <li>
-                <img src={sass} alt="html" />
+                <img src={tailwindScss} alt="tailwind css" />
               </li>
             </ul>
           </div>

@@ -91,19 +91,15 @@
       justify-content: center;
 
       li {
-        align-items: center;
-        background-color: #fff;
-        border-radius: 50%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
         cursor: pointer;
-        display: flex;
-        height: 6.5rem;
-        justify-content: center;
-        width: 6.5rem;
-
         img {
-          height: 3.4rem;
-          width: 3.4rem;
+          height: 5rem;
+          width: 11rem;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            transform: translateY(-1rem);
+          }
         }
       }
     }
