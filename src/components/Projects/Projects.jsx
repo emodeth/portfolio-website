@@ -2,6 +2,7 @@ import "./projects.scss";
 import Project from "../Project/Project";
 import coindom from "../../images/coindom.png";
 import carRental from "../../images/car-rental.png";
+import ecommerce from "../../images/e-commerce.png";
 
 function Projects() {
   return (
@@ -22,6 +23,16 @@ function Projects() {
           layout="row"
         />
         <Project
+          title="Ecommerce"
+          description="With a focus on simplicity and clean design, this store prioritize user experience, making it easy for customers to find and purchase the products they need."
+          tech1="React"
+          tech2="Tailwind CSS"
+          ghLink="https://github.com/emodeth/e-commerce"
+          ldLink="https://minimailist-e-commerce-emodeth.vercel.app/"
+          imgUrl={ecommerce}
+          layout="row-reverse"
+        />
+        <Project
           title="coindom"
           description="Coindom is a crypto app that allows users to search for information about various cryptocurrencies in real-time."
           tech1="React"
@@ -29,7 +40,7 @@ function Projects() {
           ghLink="https://github.com/emodeth/coindom-crypto-v2"
           ldLink="https://coindom-crypto.vercel.app/"
           imgUrl={coindom}
-          layout="row-reverse"
+          layout="row"
         />
       </div>
     </div>
