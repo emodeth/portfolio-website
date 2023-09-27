@@ -1,12 +1,23 @@
-import "./hero.scss";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../utils/motion";
+
 import htmlCss from "../../images/html-css.svg";
 import jsTs from "../../images/jsts.svg";
 import reactNext from "../../images/react-nextjs.svg";
 import tailwindScss from "../../images/tailwind-scss.svg";
 
+import "./hero.scss";
+
 function Hero() {
   return (
-    <div id="home" className="hero">
+    <motion.div
+      id="home"
+      className="hero"
+      variants={fadeIn("up", "tween", 0.2, 1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
       <div className="hero__container container">
         <div className="hero__content">
           <div className="hero__main">
@@ -56,7 +67,7 @@ function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

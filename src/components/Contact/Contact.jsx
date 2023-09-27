@@ -1,8 +1,18 @@
+import { motion } from "framer-motion";
+import { fadeIn } from "../../utils/motion";
+
 import "./contact.scss";
 
 function Contact() {
   return (
-    <div className="contact" id="contact">
+    <motion.div
+      className="contact"
+      id="contact"
+      variants={fadeIn("up", "tween", 0.2, 1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
       <div className="contact__container container">
         <h3 className="contact__header">Contact</h3>
         <h4 className="contact__header-2">Don't be shy! Hit me up! 👇</h4>
@@ -31,7 +41,7 @@ function Contact() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

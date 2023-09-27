@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { slideIn } from "../../utils/motion";
 import "./project.scss";
 
 function Project({
@@ -10,8 +12,14 @@ function Project({
   imgUrl,
   layout,
 }) {
+  const slideInDirection = layout === "row" ? "right" : "left";
+
   return (
-    <div
+    <motion.div
+      variants={slideIn(slideInDirection, "tween", 0.15, 0.7)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
       className={
         layout === "row-reverse"
           ? "project project--row-reverse"
@@ -55,7 +63,7 @@ function Project({
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

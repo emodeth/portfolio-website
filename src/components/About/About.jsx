@@ -1,10 +1,21 @@
-import "./about.scss";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../utils/motion";
+
 import rotatingImg from "../../images/text2.3d5aa6ba2d0632bb4e0572631c3f9dc2.svg";
 import workingImg from "../../images/working-emoji.c5325f52b5be329995a5.png";
 
+import "./about.scss";
+
 function About() {
   return (
-    <div id="about" className="about">
+    <motion.div
+      id="about"
+      className="about"
+      variants={fadeIn("up", "tween", 0.2, 1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
       <div className="about__container container">
         <div className="about__img">
           <div className="about__rotating">
@@ -38,7 +49,7 @@ function About() {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
