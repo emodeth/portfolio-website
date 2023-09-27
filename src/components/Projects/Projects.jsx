@@ -3,6 +3,7 @@ import Project from "../Project/Project";
 import coindom from "../../images/coindom.png";
 import carRental from "../../images/car-rental.png";
 import ecommerce from "../../images/e-commerce.png";
+import metaversus from "../../images/metaversus-rouge.vercel.app_ (1).png";
 
 function Projects() {
   return (
@@ -41,6 +42,16 @@ function Projects() {
           ldLink="https://coindom-crypto.vercel.app/"
           imgUrl={coindom}
           layout="row"
+        />
+        <Project
+          title="Metaversus"
+          description="Metaversus is a company that specializes in creating immersive virtual worlds and experiences."
+          tech1="React"
+          tech2="Tailwind CSS"
+          ghLink="https://github.com/emodeth/metaversus"
+          ldLink="https://metaversus-rouge.vercel.app/"
+          imgUrl={metaversus}
+          layout="row-reverse"
         />
       </div>
     </div>
