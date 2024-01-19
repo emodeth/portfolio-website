@@ -24,8 +24,8 @@ function Hero() {
             <div className="hero__text">
               <h1 className="hero__header">Front-end Developer</h1>
               <p className="hero__description">
-                Hi, I'm Emirhan Keskin. A passionate Front-end Developer based
-                in Istanbul, Turkey. 📍
+                Hi, I'm Emirhan Keskin. A Front-end Developer based in Istanbul,
+                Turkey. 📍
               </p>
               <div className="hero__contact">
                 <a
