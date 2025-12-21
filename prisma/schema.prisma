@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Profile {
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String
+  imgUrl      String
+  jobTitle    String
+  mail        String
+  githubUrl   String
+  resume      String
+}
+
+model WorkExperience {
+  id          Int      @id @default(autoincrement())
+  companyName String
+  description String
+  type        String
+  workTitle   String
+  startDate   DateTime
+  endDate     DateTime
+}
+
+model Project {
+  id              Int      @id @default(autoincrement())
+  title           String
+  description     String
+  projectContent  String
+  projectCoverUrl String
+  videoUrl        String?
+  codeUrl         String?
+  demoUrl         String?
+  photos          String[]
+  techStack       Tech[]
+}
+
+model Tech {
+  id       Int       @id @default(autoincrement())
+  name     String
+  iconName String
+  projects Project[]
+}

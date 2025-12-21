@@ -1,4 +1,6 @@
-const ProjectTitle = ({ project }: { project: any }) => {
+import { Project } from "@/lib/types";
+
+const ProjectTitle = ({ project }: { project: Project }) => {
   return (
     <div className="space-y-4">
       <h2 className="text-xl! font-bold text-foreground mb-2">

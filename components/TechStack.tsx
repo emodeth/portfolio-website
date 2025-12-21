@@ -1,6 +1,7 @@
 import TechBadge from "./TechBadge";
+import { Project } from "@/lib/types";
 
-const TechStack = ({ project }: { project: any }) => {
+const TechStack = ({ project }: { project: Project }) => {
   return (
     <div className="mt-12">
       <h2 className="text-xl! font-bold text-foreground mb-4">Tech Stack</h2>

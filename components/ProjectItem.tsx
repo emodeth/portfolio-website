@@ -4,28 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { IoLogoGithub, IoLogoYoutube, IoMdGlobe } from "react-icons/io";
-import { ReactNode } from "react";
 import TechBadge from "./TechBadge";
 import { useRouter } from "next/navigation";
 
-export interface TechStackItem {
-  name: string;
-  icon?: ReactNode;
-  class?: string;
-}
+import { Project } from "@/lib/types";
 
-interface ProjectItemProps {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  techStack: TechStackItem[];
-  liveLink?: string;
-  sourceLink?: string;
-  videoLink?: string;
-}
-
-const ProjectItem = ({ project }: { project: ProjectItemProps }) => {
+const ProjectItem = ({ project }: { project: Project }) => {
   const router = useRouter();
 
   return (
@@ -35,7 +19,7 @@ const ProjectItem = ({ project }: { project: ProjectItemProps }) => {
     >
       <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border">
         <Image
-          src={project.image}
+          src={project.projectCoverUrl}
           alt={project.title}
           fill
           className="object-cover"
@@ -62,25 +46,25 @@ const ProjectItem = ({ project }: { project: ProjectItemProps }) => {
           className="flex flex-wrap gap-3 pt-2"
           onClick={(e) => e.stopPropagation()}
         >
-          {project.liveLink && (
+          {project.demoUrl && (
             <Button asChild variant="outline" className="gap-2 rounded-xl">
-              <Link href={project.liveLink} target="_blank">
+              <Link href={project.demoUrl} target="_blank">
                 <IoMdGlobe className="h-4 w-4" />
                 Live Demo
               </Link>
             </Button>
           )}
-          {project.sourceLink && (
+          {project.codeUrl && (
             <Button asChild variant="outline" className="gap-2 rounded-xl">
-              <Link href={project.sourceLink} target="_blank">
+              <Link href={project.codeUrl} target="_blank">
                 <IoLogoGithub className="h-4 w-4" />
                 Source Code
               </Link>
             </Button>
           )}
-          {project.videoLink && (
+          {project.videoUrl && (
             <Button asChild variant="outline" className="gap-2 rounded-xl">
-              <Link href={project.videoLink} target="_blank">
+              <Link href={project.videoUrl} target="_blank">
                 <IoLogoYoutube className="h-4 w-4" />
                 Watch Video
               </Link>
