@@ -1,25 +1,20 @@
-export interface WorkExperienceItemProps {
-  date: string;
-  title: string;
-  company: string;
-  type: string;
-  description: string;
-}
+import { WorkExperience } from "@/lib/types";
 
-const WorkItem = ({ experience }: { experience: WorkExperienceItemProps }) => {
+const WorkItem = ({ experience }: { experience: WorkExperience }) => {
   return (
     <div className="flex flex-col gap-2 md:flex-row md:gap-10">
       <span className="min-w-[120px] font-medium text-muted-foreground">
-        {experience.date}
+        {experience.startDate.getFullYear()} -{" "}
+        {experience.endDate.getFullYear()}
       </span>
 
       <div className="flex flex-col gap-2">
         <div className="flex flex-col">
           <h3 className="text-lg font-semibold text-foreground">
-            {experience.title}
+            {experience.workTitle}
           </h3>
           <p className="text-muted-foreground">
-            {experience.company} • {experience.type}
+            {experience.companyName} • {experience.type}
           </p>
         </div>
 

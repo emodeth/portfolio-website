@@ -1,7 +1,9 @@
+import prisma from "@/lib/prisma";
 import WorkItem from "./WorkItem";
-import { WORK_EXPERIENCE } from "@/lib/data";
 
-const WorkExperience = () => {
+const WorkExperience = async () => {
+  const workExperience = await prisma.workExperience.findMany();
+
   return (
     <div className="mt-16 flex flex-col gap-6">
       <h2 className="text-xl font-bold text-foreground mb-2">
@@ -9,8 +11,8 @@ const WorkExperience = () => {
       </h2>
 
       <div className="flex flex-col gap-8">
-        {WORK_EXPERIENCE.map((exp) => (
-          <WorkItem key={exp.company} experience={exp} />
+        {workExperience.map((experience) => (
+          <WorkItem key={experience.id} experience={experience} />
         ))}
       </div>
     </div>
