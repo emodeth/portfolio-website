@@ -1,5 +1,3 @@
-"use server";
-
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ProjectHeader from "@/components/ProjectHeader";
 
@@ -10,8 +8,7 @@ import ProjectGallery from "@/components/ProjectGallery";
 import prisma from "@/lib/prisma";
 
 const ProjectPage = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const resolvedParams = await params;
-  const id = resolvedParams.id;
+  const { id } = await params;
 
   const project = await prisma.project.findUnique({
     where: {
@@ -32,7 +29,7 @@ const ProjectPage = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <MaxWidthWrapper>
-      <ProjectHeader />
+      <ProjectHeader project={project} />
       <ProjectTitle project={project} />
       <TechStack project={project} />
 

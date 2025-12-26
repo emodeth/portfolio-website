@@ -7,7 +7,7 @@ const ProjectTitle = ({ project }: { project: Project }) => {
         {project.title}
       </h2>
       <p className="text-muted-foreground leading-relaxed">
-        {project.description}
+        {project.projectContent}
       </p>
     </div>
   );

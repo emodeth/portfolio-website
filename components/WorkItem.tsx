@@ -9,8 +9,8 @@ const WorkItem = ({ experience }: { experience: WorkExperience }) => {
       </span>
 
       <div className="flex flex-col gap-2">
-        <div className="flex flex-col">
-          <h3 className="text-lg font-semibold text-foreground">
+        <div className="flex flex-col text-[16px]">
+          <h3 className="font-semibold text-foreground">
             {experience.workTitle}
           </h3>
           <p className="text-muted-foreground">
