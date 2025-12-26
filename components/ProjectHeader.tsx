@@ -2,8 +2,9 @@ import Link from "next/link";
 import { PiArrowBendUpLeftBold } from "react-icons/pi";
 import { IoLogoGithub, IoLogoYoutube, IoMdGlobe } from "react-icons/io";
 import { Button } from "@/components/ui/button";
+import { Project } from "@/lib/generated/prisma/client";
 
-const ProjectHeader = () => {
+const ProjectHeader = ({ project }: { project: Project }) => {
   return (
     <div className="mb-24 flex min-h-9 w-full select-none items-center justify-between gap-2">
       <Link
@@ -14,18 +15,42 @@ const ProjectHeader = () => {
       </Link>
 
       <div className="flex gap-2 items-center">
-        <Button variant="secondary" className="p-2 rounded-full cursor-pointer">
-          <IoLogoGithub className="h-4.5 w-4.5" />
-          Code
-        </Button>
-        <Button variant="secondary" className="p-2 rounded-full cursor-pointer">
-          <IoMdGlobe className="h-4.5 w-4.5" />
-          Demo
-        </Button>
-        <Button variant="secondary" className="p-2 rounded-full cursor-pointer">
-          <IoLogoYoutube className="h-4.5 w-4.5" />
-          Video
-        </Button>
+        {project.codeUrl && (
+          <Button
+            variant="secondary"
+            className="p-2 rounded-full cursor-pointer pl-3 pr-4"
+            asChild
+          >
+            <Link href={project.codeUrl} target="_blank" rel="noreferrer">
+              <IoLogoGithub className="h-4.5 w-4.5" />
+              Code
+            </Link>
+          </Button>
+        )}
+        {project.demoUrl && (
+          <Button
+            variant="secondary"
+            className="p-2 rounded-full cursor-pointer pl-3 pr-4"
+            asChild
+          >
+            <Link href={project.demoUrl} target="_blank" rel="noreferrer">
+              <IoMdGlobe className="h-4.5 w-4.5" />
+              Demo
+            </Link>
+          </Button>
+        )}
+        {project.videoUrl && (
+          <Button
+            variant="secondary"
+            className="p-2 rounded-full cursor-pointer pl-3 pr-4"
+            asChild
+          >
+            <Link href={project.videoUrl} target="_blank" rel="noreferrer">
+              <IoLogoYoutube className="h-4.5 w-4.5" />
+              Video
+            </Link>
+          </Button>
+        )}
       </div>
     </div>
   );

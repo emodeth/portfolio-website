@@ -7,11 +7,10 @@ const Projects = async () => {
       techStack: true,
     },
   });
-  console.log(projects);
 
   return (
     <div className="mt-16">
-      <h2 className="text-xl font-bold text-foreground mb-5">Projects</h2>
+      <h2 className="text-lg font-bold text-foreground mb-5">Projects</h2>
       <div className="flex flex-col gap-6">
         {projects.map((project) => (
           <ProjectItem key={project.id} project={project} />

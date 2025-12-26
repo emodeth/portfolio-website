@@ -11,7 +11,7 @@ const AboutMe = async () => {
         <>
           <ProfileItem profile={profile} />
 
-          <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          <p className="text-[16px] leading-relaxed text-muted-foreground mb-6">
             {profile.description}
           </p>
 
