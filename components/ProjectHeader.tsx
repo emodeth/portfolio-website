@@ -1,14 +1,20 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { PiArrowBendUpLeftBold } from "react-icons/pi";
 import { IoLogoGithub, IoLogoYoutube, IoMdGlobe } from "react-icons/io";
 import { Button } from "@/components/ui/button";
 import { Project } from "@/lib/generated/prisma/client";
 
 const ProjectHeader = ({ project }: { project: Project }) => {
+  const router = useRouter();
+
   return (
     <div className="mb-24 flex min-h-9 w-full select-none items-center justify-between gap-2">
       <Link
         href="/"
+        onMouseEnter={() => router.prefetch("/")}
         className="p-2 rounded-full duration-200 bg-secondary text-secondary-foreground hover:bg-secondary/80"
       >
         <PiArrowBendUpLeftBold className="h-4.5 w-4.5" />

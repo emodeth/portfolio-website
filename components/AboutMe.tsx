@@ -30,9 +30,9 @@ const AboutMe = async () => {
             </Button>
             <Button asChild variant="secondary" className="gap-2">
               <a
-                href={profile.resume}
+                href={"/emirhan_keskin-cv.pdf"}
                 target="_blank"
-                download="Emirhan_Keskin_CV.pdf"
+                download="emirhan_keskin-cv.pdf"
               >
                 <IoIosDocument />
                 Resume

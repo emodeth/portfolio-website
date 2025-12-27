@@ -1,12 +1,11 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { IoLogoGithub, IoLogoYoutube, IoMdGlobe } from "react-icons/io";
 import TechBadge from "./TechBadge";
-import { useRouter } from "next/navigation";
-
 import { Project } from "@/lib/types";
 
 const ProjectItem = ({ project }: { project: Project }) => {
@@ -14,22 +13,27 @@ const ProjectItem = ({ project }: { project: Project }) => {
 
   return (
     <div
-      onClick={() => router.push(`/project/${project.id}`)}
       onMouseEnter={() => router.prefetch(`/project/${project.id}`)}
-      className="flex flex-col gap-6 rounded-2xl border border-border bg-muted/50 p-6 transition-colors hover:bg-muted/80 cursor-pointer"
+      className="group relative flex flex-col gap-6 rounded-2xl border border-border bg-muted/50 p-6 transition-colors hover:bg-muted/80"
     >
       <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border">
         <Image
           src={project.projectCoverUrl}
           alt={project.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
         />
       </div>
 
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <h3 className="text-lg font-bold text-foreground">{project.title}</h3>
+          <h3 className="text-lg font-bold text-foreground">
+            <Link href={`/project/${project.id}`}>
+              <span className="absolute inset-0" aria-hidden="true" />
+              {project.title}
+            </Link>
+          </h3>
           <p className="text-muted-foreground leading-relaxed">
             {project.description}
           </p>
@@ -41,10 +45,7 @@ const ProjectItem = ({ project }: { project: Project }) => {
           ))}
         </div>
 
-        <div
-          className="flex flex-wrap gap-3 pt-2"
-          onClick={(e) => e.stopPropagation()}
-        >
+        <div className="relative z-10 flex flex-wrap gap-3 pt-2">
           {project.demoUrl && (
             <Button asChild variant="outline" className="gap-2 rounded-xl">
               <Link href={project.demoUrl} target="_blank">

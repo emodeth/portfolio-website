@@ -37,12 +37,36 @@ async function main() {
     data: { name: "React", iconName: "FaReact" },
   });
 
-  const nextjs = await prisma.tech.create({
-    data: { name: "Next.js", iconName: "SiNextdotjs" },
+  await prisma.tech.create({
+    data: { name: "Next.js", iconName: "RiNextjsFill" },
   });
 
-  const typescript = await prisma.tech.create({
-    data: { name: "TypeScript", iconName: "SiTypescript" },
+  await prisma.tech.create({
+    data: { name: "TypeScript", iconName: "BiLogoTypescript" },
+  });
+
+  const vite = await prisma.tech.create({
+    data: { name: "Vite", iconName: "SiVite" },
+  });
+
+  const javascript = await prisma.tech.create({
+    data: { name: "JavaScript", iconName: "BiLogoJavascript" },
+  });
+
+  const tailwindcss = await prisma.tech.create({
+    data: { name: "Tailwind CSS", iconName: "BiLogoTailwindCss" },
+  });
+
+  await prisma.tech.create({
+    data: { name: "CSS", iconName: "BiLogoCss3" },
+  });
+
+  const reactQuery = await prisma.tech.create({
+    data: { name: "React Query", iconName: "SiReactquery" },
+  });
+
+  const shadcn = await prisma.tech.create({
+    data: { name: "ShadCN", iconName: "SiShadcnui" },
   });
 
   await prisma.project.create({
@@ -50,16 +74,35 @@ async function main() {
       title: "IAU Project Selector",
       description: `Developed a web-based platform to digitize the project selection process at Istanbul Aydin University, replacing inefficient and time consuming manual workflows.`,
       projectContent: `Developed a web-based platform to digitize the project selection process at Istanbul Aydin University, replacing inefficient and time consuming manual workflows.`,
-      projectCoverUrl: "https://i.hizliresim.com/pz80lkd.png",
-      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      codeUrl: "https://github.com/johndoe/ecommerce",
-      demoUrl: "https://ecommerce-demo.example.com",
+      projectCoverUrl: "https://i.hizliresim.com/rt05tsm.png",
+      videoUrl: "https://www.youtube.com/watch?v=QtaaJWW4HS0",
+      codeUrl: "https://github.com/emodeth/project-selector",
+      demoUrl: "",
       photos: [
-        "https://i.hizliresim.com/pz80lkd.png",
-        "https://i.hizliresim.com/pz80lkd.png",
+        "https://i.hizliresim.com/tqvnyg9.png",
+        "https://i.hizliresim.com/sx68928.png",
+        "https://i.hizliresim.com/7pf7gni.png",
+        "https://i.hizliresim.com/jt6mey7.png",
+        "https://i.hizliresim.com/388wau7.png",
+        "https://i.hizliresim.com/4w2ttv1.png",
+        "https://i.hizliresim.com/cpg7vao.png",
+        "https://i.hizliresim.com/nlnceu1.png",
+        "https://i.hizliresim.com/rt05tsm.png",
+        "https://i.hizliresim.com/ng7rl18.png",
+        "https://i.hizliresim.com/a6oisx3.png",
+        "https://i.hizliresim.com/5asnzuy.png",
+        "https://i.hizliresim.com/7jjbc4v.png",
+        "https://i.hizliresim.com/a8lfyw4.png",
       ],
       techStack: {
-        connect: [{ id: react.id }, { id: nextjs.id }, { id: typescript.id }],
+        connect: [
+          { id: react.id },
+          { id: javascript.id },
+          { id: vite.id },
+          { id: tailwindcss.id },
+          { id: reactQuery.id },
+          { id: shadcn.id },
+        ],
       },
     },
   });

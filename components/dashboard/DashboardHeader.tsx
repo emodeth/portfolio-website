@@ -22,7 +22,7 @@ export default function DashboardHeader() {
           className="text-[16px]"
           onClick={() => router.push("/")}
         >
-          Emirhan Keskin
+          emirhankeskin.dev
         </Button>
         <div className="flex items-center gap-4">
           <Button

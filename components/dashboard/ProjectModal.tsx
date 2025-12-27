@@ -125,6 +125,84 @@ export default function ProjectModal({
         </div>
 
         <div className="space-y-2">
+          <label className="text-sm font-medium">Project Photos</label>
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-2">
+              <input
+                id="new-photo-url"
+                placeholder="Enter image URL"
+                className="flex-1 rounded-md bg-muted/50 border border-input px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    const input = e.currentTarget;
+                    const val = input.value.trim();
+                    if (val) {
+                      setFormData((prev) => ({
+                        ...prev,
+                        photos: [...(prev.photos || []), val],
+                      }));
+                      input.value = "";
+                    }
+                  }
+                }}
+              />
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={() => {
+                  const input = document.getElementById(
+                    "new-photo-url"
+                  ) as HTMLInputElement;
+                  const val = input.value.trim();
+                  if (val) {
+                    setFormData((prev) => ({
+                      ...prev,
+                      photos: [...(prev.photos || []), val],
+                    }));
+                    input.value = "";
+                  }
+                }}
+              >
+                Add
+              </Button>
+            </div>
+            <div className="space-y-2">
+              {formData.photos?.map((photo, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 p-2 rounded-md bg-muted/30 border border-border"
+                >
+                  <img
+                    src={photo}
+                    alt={`Preview ${index}`}
+                    className="w-10 h-10 object-cover rounded"
+                  />
+                  <span className="text-sm truncate flex-1">{photo}</span>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        photos: prev.photos?.filter((_, i) => i !== index),
+                      }))
+                    }
+                    className="text-muted-foreground hover:text-red-500 transition-colors"
+                  >
+                    <LuX className="w-4 h-4" />
+                  </button>
+                </div>
+              ))}
+              {(!formData.photos || formData.photos.length === 0) && (
+                <p className="text-sm text-muted-foreground italic">
+                  No photos added yet.
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-2">
           <label className="text-sm font-medium">Tech Stack</label>
           <div className="flex flex-wrap gap-2 mb-2 p-2 bg-muted/30 rounded-md">
             {formData.techStackNames?.map((tech) => (
