@@ -18,7 +18,7 @@ const ProjectItem = ({ project }: { project: Project }) => {
     >
       <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border">
         <Image
-          src={project.projectCoverUrl}
+          src={project.coverUrl}
           alt={project.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

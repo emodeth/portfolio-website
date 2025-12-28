@@ -110,7 +110,7 @@ const ProjectTitle = ({ project }: { project: Project }) => {
             ),
           }}
         >
-          {project.projectContent}
+          {project.content}
         </ReactMarkdown>
       </div>
     </div>

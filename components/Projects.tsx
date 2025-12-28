@@ -1,12 +1,27 @@
-import prisma from "@/lib/prisma";
+import { client } from "@/sanity/client";
+import { Project } from "@/lib/types";
 import ProjectItem from "./ProjectItem";
 
 const Projects = async () => {
-  const projects = await prisma.project.findMany({
-    include: {
-      techStack: true,
-    },
-  });
+  const query = `*[_type == "project"] | order(id desc){
+    "id": _id,
+    title,
+    description,
+    "coverUrl": coverUrl.asset->url,
+    videoUrl,
+    codeUrl,
+    demoUrl,
+    "photos": photos[].asset->url,
+
+    content,
+    techStack[]->{
+      "id": _id,
+      name,
+      iconName
+    }
+  }`;
+
+  const projects: Project[] = await client.fetch(query);
 
   return (
     <div className="mt-16">
