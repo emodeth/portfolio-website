@@ -1,5 +1,5 @@
 export interface Profile {
-  id: number;
+  id: string | number;
   name: string;
   description: string;
   imgUrl: string;
@@ -10,7 +10,7 @@ export interface Profile {
 }
 
 export interface WorkExperience {
-  id: number;
+  id: string | number;
   companyName: string;
   description: string;
   type: string;
@@ -20,20 +20,20 @@ export interface WorkExperience {
 }
 
 export interface Tech {
-  id: number;
+  id: string | number;
   name: string;
   iconName: string;
 }
 
 export interface Project {
-  id: number;
+  id: string | number;
   title: string;
   description: string;
-  projectCoverUrl: string;
+  coverUrl: string;
   videoUrl: string | null;
   codeUrl: string | null;
   demoUrl: string | null;
   photos: string[];
-  projectContent: string;
+  content: string;
   techStack: Tech[];
 }

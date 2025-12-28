@@ -15,7 +15,7 @@ const ProjectVideo = ({ project }: { project: Project }) => {
             src={src}
             controls
             className="h-full w-full object-cover"
-            poster={project.projectCoverUrl}
+            poster={project.coverUrl}
             muted
             preload="auto"
           >

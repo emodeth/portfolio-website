@@ -1,15 +1,7 @@
-"use client";
-
 import { Profile } from "@/lib/types";
 import Image from "next/image";
-import { useSession } from "@/lib/auth-client";
-import Link from "next/link";
-import { LuLayoutDashboard } from "react-icons/lu";
-import { Button } from "./ui/button";
 
 const ProfileItem = ({ profile }: { profile: Profile }) => {
-  const { data: session } = useSession();
-
   return (
     <div className="flex items-center justify-between mb-6 mt-9">
       <div className="flex items-center gap-4">
@@ -31,15 +23,6 @@ const ProfileItem = ({ profile }: { profile: Profile }) => {
           </p>
         </div>
       </div>
-
-      {session && (
-        <Button asChild variant="outline" size="sm" className="hidden sm:flex">
-          <Link href="/dashboard" className="gap-2">
-            <LuLayoutDashboard className="w-4 h-4" />
-            Dashboard
-          </Link>
-        </Button>
-      )}
     </div>
   );
 };

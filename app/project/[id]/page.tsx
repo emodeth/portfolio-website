@@ -4,19 +4,30 @@ import ProjectHeader from "@/components/ProjectHeader";
 import ProjectTitle from "@/components/ProjectTitle";
 import ProjectVideo from "@/components/ProjectVideo";
 import ProjectGallery from "@/components/ProjectGallery";
-import prisma from "@/lib/prisma";
+import { client } from "@/sanity/client";
+import { Project } from "@/lib/types";
 
 const ProjectPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
 
-  const project = await prisma.project.findUnique({
-    where: {
-      id: Number(id),
-    },
-    include: {
-      techStack: true,
-    },
-  });
+  const query = `*[_type == "project" && _id == $id][0]{
+    "id": _id,
+    title,
+    description,
+    "coverUrl": coverUrl.asset->url,
+    videoUrl,
+    codeUrl,
+    demoUrl,
+    "photos": photos[].asset->url,
+    content,
+    techStack[]->{
+      "id": _id,
+      name,
+      iconName
+    }
+  }`;
+
+  const project: Project = await client.fetch(query, { id });
 
   if (!project) {
     return (
