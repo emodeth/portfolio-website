@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { PiArrowBendUpLeftBold } from "react-icons/pi";
 import { IoLogoGithub, IoLogoYoutube, IoMdGlobe } from "react-icons/io";
 import { Button } from "@/components/ui/button";
-import { Project } from "@/lib/generated/prisma/client";
+import { Project } from "@/lib/types";
 
 const ProjectHeader = ({ project }: { project: Project }) => {
   const router = useRouter();

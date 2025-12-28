@@ -1,9 +1,21 @@
-import prisma from "@/lib/prisma";
+import { client } from "@/sanity/client";
+import { Profile } from "@/lib/types";
 import ProfileItem from "./ProfileItem";
 import { Button } from "./ui/button";
 import { IoIosDocument, IoLogoGithub, IoMdMail } from "react-icons/io";
 const AboutMe = async () => {
-  const profile = await prisma.profile.findFirst();
+  const query = `*[_type == "profile"][0]{
+    "id": _id,
+    name,
+    description,
+    jobTitle,
+    mail,
+    githubUrl,
+    imgUrl,
+    "resume": resume.asset->url
+  }`;
+
+  const profile: Profile = await client.fetch(query);
 
   return (
     <div className="flex flex-col">
@@ -29,11 +41,7 @@ const AboutMe = async () => {
               </a>
             </Button>
             <Button asChild variant="secondary" className="gap-2">
-              <a
-                href={"/emirhan_keskin-cv.pdf"}
-                target="_blank"
-                download="emirhan_keskin-cv.pdf"
-              >
+              <a href={profile.resume} target="_blank">
                 <IoIosDocument />
                 Resume
               </a>
