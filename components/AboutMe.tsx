@@ -1,22 +1,13 @@
-import { client } from "@/sanity/client";
 import { Profile } from "@/lib/types";
 import ProfileItem from "./ProfileItem";
 import { Button } from "./ui/button";
 import { IoIosDocument, IoLogoGithub, IoMdMail } from "react-icons/io";
-const AboutMe = async () => {
-  const query = `*[_type == "profile"][0]{
-    "id": _id,
-    name,
-    description,
-    jobTitle,
-    mail,
-    githubUrl,
-    imgUrl,
-    "resume": resume.asset->url
-  }`;
 
-  const profile: Profile = await client.fetch(query);
+interface AboutMeProps {
+  profile: Profile;
+}
 
+const AboutMe = ({ profile }: AboutMeProps) => {
   return (
     <div className="flex flex-col">
       {profile && (
