@@ -50,4 +50,15 @@ const ProjectPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   );
 };
 
+export async function generateStaticParams() {
+  const query = `*[_type == "project"]{ "_id": _id }`;
+  const projects = await client.fetch(query);
+
+  return projects.map((project: { _id: string }) => ({
+    id: project._id,
+  }));
+}
+
+export const revalidate = 86400; // 1 day
+
 export default ProjectPage;
