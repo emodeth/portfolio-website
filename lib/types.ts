@@ -27,6 +27,7 @@ export interface Tech {
 
 export interface Project {
   id: string | number;
+  slug: string;
   title: string;
   description: string;
   coverUrl: string;

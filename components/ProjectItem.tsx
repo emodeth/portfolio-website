@@ -13,7 +13,7 @@ const ProjectItem = ({ project }: { project: Project }) => {
 
   return (
     <div
-      onMouseEnter={() => router.prefetch(`/project/${project.id}`)}
+      onMouseEnter={() => router.prefetch(`/projects/${project.slug}`)}
       className="group relative flex flex-col gap-6 rounded-2xl border border-border bg-muted/50 p-6 transition-colors hover:bg-muted/80"
     >
       <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border">
@@ -29,7 +29,7 @@ const ProjectItem = ({ project }: { project: Project }) => {
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <h3 className="text-lg font-bold text-gray-1200">
-            <Link href={`/project/${project.id}`}>
+            <Link href={`/projects/${project.slug}`}>
               <span className="absolute inset-0" aria-hidden="true" />
               {project.title}
             </Link>
