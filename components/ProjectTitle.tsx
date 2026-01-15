@@ -13,17 +13,17 @@ const ProjectTitle = ({ project }: { project: Project }) => {
           remarkPlugins={[remarkGfm]}
           components={{
             h1: ({ children }) => (
-              <h1 className="text-2xl font-bold text-gray-1200 mt-8 mb-4 border-b border-border pb-2">
+              <h1 className="font-bold text-gray-1200 mt-8 mb-4 border-b border-border pb-2">
                 {children}
               </h1>
             ),
             h2: ({ children }) => (
-              <h2 className="text-xl font-semibold text-gray-1200 mt-12 mb-3">
+              <h2 className="font-bold text-gray-1200 mt-12 mb-3">
                 {children}
               </h2>
             ),
             h3: ({ children }) => (
-              <h3 className="text-lg font-medium text-gray-1200 mt-4 mb-2">
+              <h3 className="font-bold text-gray-1200 mt-4 mb-2">
                 {children}
               </h3>
             ),

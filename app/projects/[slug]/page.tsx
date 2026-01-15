@@ -44,8 +44,8 @@ const ProjectPage = async ({ params }: { params: Promise<{ slug: string }> }) =>
       <ProjectTitle project={project} />
 
       <div className="mt-16 space-y-16">
-        <ProjectGallery project={project} />
         <ProjectVideo project={project} />
+        <ProjectGallery project={project} />
       </div>
     </MaxWidthWrapper>
   );
