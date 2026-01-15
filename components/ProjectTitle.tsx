@@ -5,29 +5,29 @@ import remarkGfm from "remark-gfm";
 const ProjectTitle = ({ project }: { project: Project }) => {
   return (
     <div className="space-y-4">
-      <h2 className="text-xl! font-bold text-foreground mb-2">
+      <h2 className=" font-bold text-gray-1200 mb-2">
         {project.title}
       </h2>
-      <div className="text-muted-foreground leading-relaxed max-w-none">
+      <div className="text-text-paragraph leading-relaxed max-w-none">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
             h1: ({ children }) => (
-              <h1 className="text-2xl font-bold text-foreground mt-8 mb-4 border-b border-border pb-2">
+              <h1 className="text-2xl font-bold text-gray-1200 mt-8 mb-4 border-b border-border pb-2">
                 {children}
               </h1>
             ),
             h2: ({ children }) => (
-              <h2 className="text-xl font-semibold text-foreground mt-12 mb-3">
+              <h2 className="text-xl font-semibold text-gray-1200 mt-12 mb-3">
                 {children}
               </h2>
             ),
             h3: ({ children }) => (
-              <h3 className="text-lg font-medium text-foreground mt-4 mb-2">
+              <h3 className="text-lg font-medium text-gray-1200 mt-4 mb-2">
                 {children}
               </h3>
             ),
-            p: ({ children }) => <p className="mb-4 leading-7">{children}</p>,
+            p: ({ children }) => <p className="mb-4 leading-7 ">{children}</p>,
             ul: ({ children }) => (
               <ul className="list-disc list-inside mb-4 space-y-1 pl-4">
                 {children}
@@ -58,7 +58,7 @@ const ProjectTitle = ({ project }: { project: Project }) => {
               const match = /language-(\w+)/.exec(className || "");
               const isInline = !match && !children?.toString().includes("\n");
               return isInline ? (
-                <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-foreground border border-border">
+                <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-gray-1200 border border-border">
                   {children}
                 </code>
               ) : (
@@ -77,7 +77,7 @@ const ProjectTitle = ({ project }: { project: Project }) => {
               </div>
             ),
             thead: ({ children }) => (
-              <thead className="bg-muted text-muted-foreground border-b border-border">
+              <thead className="bg-muted text-gray-1100 border-b border-border">
                 {children}
               </thead>
             ),

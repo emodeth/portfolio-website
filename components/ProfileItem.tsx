@@ -15,10 +15,10 @@ const ProfileItem = ({ profile }: { profile: Profile }) => {
           />
         </div>
         <div className="flex flex-col">
-          <h3 className="text-[16px] font-semibold text-foreground leading-snug">
+          <h3 className="text-[16px] font-semibold text-gray-1200 leading-snug">
             {profile.name}
           </h3>
-          <p className="text-[16px] text-muted-foreground leading-snug">
+          <p className="text-[16px] text-gray-1100 leading-snug">
             {profile.jobTitle}
           </p>
         </div>
