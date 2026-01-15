@@ -8,7 +8,7 @@ interface WorkExperienceProps {
 const WorkExperience = ({ workExperience }: WorkExperienceProps) => {
   return (
     <div className="mt-16 flex flex-col">
-      <h2 className="text-lg font-bold text-foreground mb-5">
+      <h2 className="font-bold text-gray-1200 mb-5">
         Work Experience
       </h2>
 

@@ -7,11 +7,12 @@ import ProjectGallery from "@/components/ProjectGallery";
 import { client } from "@/sanity/client";
 import { Project } from "@/lib/types";
 
-const ProjectPage = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const { id } = await params;
+const ProjectPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
 
-  const query = `*[_type == "project" && _id == $id][0]{
+  const query = `*[_type == "project" && slug == $slug][0]{
     "id": _id,
+    slug,
     title,
     description,
     "coverUrl": coverUrl.asset->url,
@@ -27,7 +28,7 @@ const ProjectPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     }
   }`;
 
-  const project: Project = await client.fetch(query, { id });
+  const project: Project = await client.fetch(query, { slug }, { next: { revalidate: 86400 } });
 
   if (!project) {
     return (
@@ -43,19 +44,19 @@ const ProjectPage = async ({ params }: { params: Promise<{ id: string }> }) => {
       <ProjectTitle project={project} />
 
       <div className="mt-16 space-y-16">
-        <ProjectGallery project={project} />
         <ProjectVideo project={project} />
+        <ProjectGallery project={project} />
       </div>
     </MaxWidthWrapper>
   );
 };
 
 export async function generateStaticParams() {
-  const query = `*[_type == "project"]{ "_id": _id }`;
+  const query = `*[_type == "project"]{ "slug": slug }`;
   const projects = await client.fetch(query);
 
-  return projects.map((project: { _id: string }) => ({
-    id: project._id,
+  return projects.map((project: { slug: string }) => ({
+    slug: project.slug,
   }));
 }
 

@@ -8,7 +8,7 @@ const ProjectVideo = ({ project }: { project: Project }) => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl! font-bold text-foreground">Project Video</h2>
+      <h2 className=" font-bold text-gray-1200">Project Video</h2>
       <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border bg-muted shadow-lg">
         {type === "native" ? (
           <video

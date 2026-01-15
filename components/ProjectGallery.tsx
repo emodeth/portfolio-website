@@ -20,7 +20,7 @@ const ProjectGallery = ({ project }: { project: Project }) => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl! font-bold text-foreground">Project Gallery</h2>
+      <h2 className="font-bold text-gray-1200">Project Gallery</h2>
       <Carousel className="w-full">
         <CarouselContent>
           {project.photos.map((img, index) => (

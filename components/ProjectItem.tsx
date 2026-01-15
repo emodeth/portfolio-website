@@ -13,7 +13,7 @@ const ProjectItem = ({ project }: { project: Project }) => {
 
   return (
     <div
-      onMouseEnter={() => router.prefetch(`/project/${project.id}`)}
+      onMouseEnter={() => router.prefetch(`/projects/${project.slug}`)}
       className="group relative flex flex-col gap-6 rounded-2xl border border-border bg-muted/50 p-6 transition-colors hover:bg-muted/80"
     >
       <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border">
@@ -28,26 +28,30 @@ const ProjectItem = ({ project }: { project: Project }) => {
 
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <h3 className="text-lg font-bold text-foreground">
-            <Link href={`/project/${project.id}`}>
+          <h3 className="font-bold text-gray-1200">
+            <Link href={`/projects/${project.slug}`}>
               <span className="absolute inset-0" aria-hidden="true" />
               {project.title}
             </Link>
           </h3>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-gray-1100 leading-relaxed">
             {project.description}
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-2 gap-2 md:flex md:flex-wrap">
           {project.techStack.map((tech) => (
             <TechBadge key={tech.name} tech={tech} />
           ))}
         </div>
 
-        <div className="relative z-10 flex flex-wrap gap-3 pt-2">
+        <div className="relative z-10 flex flex-col gap-3 pt-2 md:flex-row md:flex-wrap">
           {project.demoUrl && (
-            <Button asChild variant="outline" className="gap-2 rounded-xl">
+            <Button
+              asChild
+              variant="outline"
+              className="w-full gap-2 rounded-xl md:w-auto"
+            >
               <Link href={project.demoUrl} target="_blank">
                 <IoMdGlobe className="h-4 w-4" />
                 Live Demo
@@ -55,7 +59,11 @@ const ProjectItem = ({ project }: { project: Project }) => {
             </Button>
           )}
           {project.codeUrl && (
-            <Button asChild variant="outline" className="gap-2 rounded-xl">
+            <Button
+              asChild
+              variant="outline"
+              className="w-full gap-2 rounded-xl md:w-auto"
+            >
               <Link href={project.codeUrl} target="_blank">
                 <IoLogoGithub className="h-4 w-4" />
                 Source Code
@@ -63,7 +71,11 @@ const ProjectItem = ({ project }: { project: Project }) => {
             </Button>
           )}
           {project.videoUrl && (
-            <Button asChild variant="outline" className="gap-2 rounded-xl">
+            <Button
+              asChild
+              variant="outline"
+              className="w-full gap-2 rounded-xl md:w-auto"
+            >
               <Link href={project.videoUrl} target="_blank">
                 <IoLogoYoutube className="h-4 w-4" />
                 Watch Video

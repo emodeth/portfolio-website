@@ -28,6 +28,7 @@ const Home = async () => {
     },
     "projects": *[_type == "project"] | order(id desc){
       "id": _id,
+      slug,
       title,
       description,
       "coverUrl": coverUrl.asset->url,
@@ -44,7 +45,7 @@ const Home = async () => {
     }
   }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { next: { revalidate: 86400 } });
   const { profile, projects } = data;
 
   const workExperience: WorkExperienceType[] = data.workExperience.map(
