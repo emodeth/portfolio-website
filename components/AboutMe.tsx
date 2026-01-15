@@ -14,11 +14,11 @@ const AboutMe = ({ profile }: AboutMeProps) => {
         <>
           <ProfileItem profile={profile} />
 
-          <p className="text-[16px] leading-relaxed text-muted-foreground mb-6">
+          <p className="text-[16px] leading-relaxed text-gray-1100 mb-6">
             {profile.description}
           </p>
 
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             <Button asChild variant="secondary" className="gap-2">
               <a href={`mailto:${profile.mail}`}>
                 <IoMdMail />

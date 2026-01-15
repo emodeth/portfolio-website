@@ -9,7 +9,7 @@ const TechBadge = ({ tech }: { tech: Tech }) => {
   return (
     <div
       className={cn(
-        "flex items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors text-[14px]"
+        "flex items-center justify-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1 text-xs font-medium text-gray-1100 transition-colors text-[14px] whitespace-nowrap"
       )}
     >
       {createElement(iconComponent, { className: "w-3.5 h-3.5" })}
