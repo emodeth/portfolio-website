@@ -51,9 +51,12 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #fcfcfc;
+  --gray-1100: #646464;
+  --gray-1200: #202020;
+  --text-paragraph: #3a3a3a;
   --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
+  --card: #ffffff;
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
@@ -90,7 +93,7 @@
   --gray-1100: #b5b5b5;
   --gray-1200: #eee;
   --text-paragraph: #dbdbdb;
-  --card: oklch(0.205 0 0);
+  --card: #1a1a1a;
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);

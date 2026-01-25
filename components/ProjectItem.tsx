@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { IoLogoGithub, IoLogoYoutube, IoMdGlobe } from "react-icons/io";
+import { IoLogoGithub, IoLogoYoutube, IoMdOpen } from "react-icons/io";
 import TechBadge from "./TechBadge";
 import { Project } from "@/lib/types";
 
@@ -12,11 +12,11 @@ const ProjectItem = ({ project }: { project: Project }) => {
   const router = useRouter();
 
   return (
-    <div
-      onMouseEnter={() => router.prefetch(`/projects/${project.slug}`)}
-      className="group relative flex flex-col gap-6 rounded-2xl border border-border bg-muted/50 p-6 transition-colors hover:bg-muted/80"
-    >
-      <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border">
+    <div className="group flex flex-col overflow-hidden rounded-md border border-accent bg-card hover:bg-card/80 cursor-pointer"
+      onClick={() => router.push(`/projects/${project.slug}`)}>
+      <div
+        className="relative aspect-video w-full cursor-pointer overflow-hidden"
+      >
         <Image
           src={project.coverUrl}
           alt={project.title}
@@ -26,43 +26,47 @@ const ProjectItem = ({ project }: { project: Project }) => {
         />
       </div>
 
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-gray-1200">
-            <Link href={`/projects/${project.slug}`}>
-              <span className="absolute inset-0" aria-hidden="true" />
-              {project.title}
-            </Link>
-          </h3>
-          <p className="text-gray-1100 leading-relaxed">
-            {project.description}
-          </p>
+      <div className="flex flex-1 flex-col p-6">
+        <div className="mb-4 flex items-start justify-between gap-4">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="font-bold text-gray-1200"
+          >
+            {project.title}
+          </Link>
+
+          {project.demoUrl && (
+            <Button
+              asChild
+              variant="secondary"
+              size="icon"
+              className="h-10 w-10 shrink-0 rounded-lg bg-background text-gray-1100 hover:bg-background/50 "
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Link href={project.demoUrl} target="_blank">
+                <IoMdOpen className="h-5 w-5" />
+              </Link>
+            </Button>
+          )}
         </div>
 
-        <div className="grid grid-cols-2 gap-2 md:flex md:flex-wrap">
+        <p className="mb-6 line-clamp-3 text-gray-1100 leading-relaxed text-[15px]">
+          {project.description}
+        </p>
+
+        <div className="mb-8 flex flex-wrap gap-2">
           {project.techStack.map((tech) => (
             <TechBadge key={tech.name} tech={tech} />
           ))}
         </div>
 
-        <div className="relative z-10 flex flex-col gap-3 pt-2 md:flex-row md:flex-wrap">
-          {project.demoUrl && (
-            <Button
-              asChild
-              variant="outline"
-              className="w-full gap-2 rounded-xl md:w-auto"
-            >
-              <Link href={project.demoUrl} target="_blank">
-                <IoMdGlobe className="h-4 w-4" />
-                Live Demo
-              </Link>
-            </Button>
-          )}
+        <div className="mt-auto flex flex-col gap-3 md:flex-row">
           {project.codeUrl && (
             <Button
               asChild
               variant="outline"
-              className="w-full gap-2 rounded-xl md:w-auto"
+              className="w-full gap-2 rounded-md border-border bg-transparent hover:bg-muted md:w-auto"
+              onClick={(e) => e.stopPropagation()}
             >
               <Link href={project.codeUrl} target="_blank">
                 <IoLogoGithub className="h-4 w-4" />
@@ -74,7 +78,8 @@ const ProjectItem = ({ project }: { project: Project }) => {
             <Button
               asChild
               variant="outline"
-              className="w-full gap-2 rounded-xl md:w-auto"
+              className="w-full gap-2 rounded-md border-border bg-transparent hover:bg-muted md:w-auto"
+              onClick={(e) => e.stopPropagation()}
             >
               <Link href={project.videoUrl} target="_blank">
                 <IoLogoYoutube className="h-4 w-4" />
@@ -82,6 +87,7 @@ const ProjectItem = ({ project }: { project: Project }) => {
               </Link>
             </Button>
           )}
+
         </div>
       </div>
     </div>
