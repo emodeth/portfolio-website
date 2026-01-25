@@ -1,4 +1,5 @@
 import { WorkExperience } from "@/lib/types";
+import MarkdownRenderer from "./MarkdownRenderer";
 
 const WorkItem = ({ experience }: { experience: WorkExperience }) => {
   return (
@@ -23,9 +24,9 @@ const WorkItem = ({ experience }: { experience: WorkExperience }) => {
           </p>
         </div>
 
-        <p className="max-w-xl leading-relaxed text-gray-1100">
-          {experience.description}
-        </p>
+        <div className="max-w-xl text-gray-1100">
+          <MarkdownRenderer>{experience.description}</MarkdownRenderer>
+        </div>
       </div>
     </div>
   );
