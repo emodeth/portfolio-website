@@ -12,7 +12,7 @@ const ProjectItem = ({ project }: { project: Project }) => {
   const router = useRouter();
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-md border border-accent bg-card hover:bg-card/80 cursor-pointer"
+    <div className="group flex flex-col overflow-hidden rounded-xl border-2 border-accent bg-card hover:border-border cursor-pointer transition duration-150"
       onClick={() => router.push(`/projects/${project.slug}`)}>
       <div
         className="relative aspect-video w-full cursor-pointer overflow-hidden"
