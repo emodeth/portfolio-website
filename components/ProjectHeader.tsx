@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { PiArrowBendUpLeftBold } from "react-icons/pi";
-import { IoLogoGithub, IoLogoYoutube, IoMdGlobe } from "react-icons/io";
+import { IoIosLink, IoLogoGithub, IoLogoYoutube } from "react-icons/io";
 import { Button } from "@/components/ui/button";
 import { Project } from "@/lib/types";
 
@@ -33,18 +33,6 @@ const ProjectHeader = ({ project }: { project: Project }) => {
             </Link>
           </Button>
         )}
-        {project.demoUrl && (
-          <Button
-            variant="secondary"
-            className="p-2 rounded-full cursor-pointer pl-3 pr-4"
-            asChild
-          >
-            <Link href={project.demoUrl} target="_blank" rel="noreferrer">
-              <IoMdGlobe className="h-4.5 w-4.5" />
-              Demo
-            </Link>
-          </Button>
-        )}
         {project.videoUrl && (
           <Button
             variant="secondary"
@@ -54,6 +42,18 @@ const ProjectHeader = ({ project }: { project: Project }) => {
             <Link href={project.videoUrl} target="_blank" rel="noreferrer">
               <IoLogoYoutube className="h-4.5 w-4.5" />
               Video
+            </Link>
+          </Button>
+        )}
+        {project.demoUrl && (
+          <Button
+            variant="secondary"
+            className="p-2 rounded-full cursor-pointer pl-3 pr-4"
+            asChild
+          >
+            <Link href={project.demoUrl} target="_blank" rel="noreferrer">
+              <IoIosLink className="h-4.5 w-4.5" />
+              Live
             </Link>
           </Button>
         )}
