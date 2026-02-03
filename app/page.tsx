@@ -45,7 +45,7 @@ const Home = async () => {
     }
   }`;
 
-  const data = await client.fetch(query, {}, { next: { revalidate: 86400 } });
+  const data = await client.fetch(query, {}, { next: { tags: ['sanity'] } });
   const { profile, projects } = data;
 
   const workExperience: WorkExperienceType[] = data.workExperience.map(
@@ -73,6 +73,6 @@ const Home = async () => {
   );
 };
 
-export const revalidate = 86400; // 1 day
+// Revalidation handled by webhook
 
 export default Home;
