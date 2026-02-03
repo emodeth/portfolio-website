@@ -28,7 +28,7 @@ const ProjectPage = async ({ params }: { params: Promise<{ slug: string }> }) =>
     }
   }`;
 
-  const project: Project = await client.fetch(query, { slug }, { next: { tags: ['sanity', `project-${slug}`] } });
+  const project: Project = await client.fetch(query, { slug }, { next: { revalidate: 900, tags: ['sanity', `project-${slug}`] } });
 
   if (!project) {
     return (
